@@ -13,6 +13,7 @@ from flask_cors import CORS
 from commonModules.UserDataPreprocessDb import *
 from flask_sqlalchemy import SQLAlchemy
 from flask_mongoalchemy import MongoAlchemy
+
 def create_app():
     app = Flask(__name__)
     params = urllib.parse.quote_plus('Driver={%s};''Server=%s;''Database=%s;'%(DRIVER_NAME,SQL_SERVERNAME,SQL_DBNAME))
