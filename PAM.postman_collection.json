@@ -1,0 +1,767 @@
+{
+	"info": {
+		"_postman_id": "09a969ae-3478-4b26-a7a2-989a10895848",
+		"name": "PAM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PAM-LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"emailid\": \"vinit.vivek@tcs.com\",\n    \"password\": \"Tata@1234\",\n    \"appCode\": \"PAM\"\n}"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/login_data",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"login_data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-CHANGEPWD",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"User_ID\": \"9\",\n    \"password\": \"Tata@1234\"\n}"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/changePassword",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"changePassword"
+					]
+				},
+				"description": "PAM Password changes"
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-ASSET",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/asset",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"asset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAM_ASSET_VISIBILITY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "adc10e05-aa35-4457-9496-5ac9cb22e7a5",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/asset_visibility",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"asset_visibility"
+					]
+				},
+				"description": "Asset visibility"
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-LocDashboard",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46cde3af-9b88-42ea-9faf-bfa2581f45a5",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/Location_dashboard",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"Location_dashboard"
+					]
+				},
+				"description": "Pam asset visibility loccation dashboard"
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-CostWise",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nameofloc\": \"OHIO\"\n}"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/cost_Wise_Distribution",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"cost_Wise_Distribution"
+					]
+				},
+				"description": "PAM -Visibility -costwise distribution"
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-visibility-CostWiseDropDown",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selectedvalues\": [\"child-B,Parent-OHIO:D104\"]\n}"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/cost_Wise_Distribution_drop",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"cost_Wise_Distribution_drop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibiity-CosWiseDistChart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selectedvalues\": [\"child-B,Parent-OHIO:D104\",\"child-E,Parent-OHIO:D104\",\"child-A,Parent-OHIO:D104\"],\n    \"year\":\"2011\"\n}"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/cost_Wise_Distribution_chart",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"cost_Wise_Distribution_chart"
+					]
+				},
+				"description": "Pam -visibility distribution chart"
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-AgeWiseDistChart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selectedvalues\": [\"child-15130,Parent-OHIO:D104:I\"]\n}\n"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/Age_Wise_Distribution_chart",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"Age_Wise_Distribution_chart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-VendorViewChart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selectedvalues\": [\"child-19587,Parent-OHIO:D104:E\"]\n}"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/Vendor_View_chart",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"Vendor_View_chart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-MaintActivityDrpDown",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selectedvalues\": [\"child-17060,Parent-OHIO:D104:A\"]\n}\n\n"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/Maintenance_Activity_drop",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"Maintenance_Activity_drop"
+					]
+				},
+				"description": "Pam visibility Maintainance Activity Drop Down"
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-MaintActivity-Chart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selectedvalues\": [\"child-17060,Parent-OHIO:D104:A\"],\n    \"year\":\"2016\"\n}\n"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/Maintenance_Activity_Chart",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"Maintenance_Activity_Chart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-SparePartInventory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nameofloc\": \"OHIO\"\n}"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/Spare_Part_Inventory_Health",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"Spare_Part_Inventory_Health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-SparepartInventory-DropDown",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selectedvalues\":[\"child-10172,Parent-OHIO:D104:I:Asset Id\",\"child-13808,Parent-OHIO:D104:I:Asset Id\",\"child-EE10045,Parent-OHIO:D104:I:Part Id\",\"child-LK10116,Parent-OHIO:D104:I:Part Id\",\"child-LK10024,Parent-OHIO:D104:I:Part Id\"]\n}\n\n"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/Spare_Part_Inventory_Health_drop",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"Spare_Part_Inventory_Health_drop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAM-Visibility-SparePartInventory-Chart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQwNDU0MjMsIm5iZiI6MTU2NDA0NTQyMywianRpIjoiMTRiNDUwOGYtYWQwNy00MjdhLWIyZjMtODEzZmEzZmVlOWE1IiwiZXhwIjoxNTY0MDQ2MzIzLCJpZGVudGl0eSI6InZpbml0LnZpdmVrQHRjcy5jb20iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.LucCykMENIOmzSd2uRKWMnbf6oh910AJhhoZIrXc6jQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selectedvalues\":[\"child-10687,Parent-OHIO:D104:I:Asset Id\",\"child-EE10045,Parent-OHIO:D104:I:Part Id\",\"child-HD10147,Parent-OHIO:D104:I:Part Id\"],\n    \"year\":\"2013\"\n}\n\n"
+				},
+				"url": {
+					"raw": "http://52.172.136.231:5004/api/v1/Spare_Part_Inventory_Health_Chart",
+					"protocol": "http",
+					"host": [
+						"52",
+						"172",
+						"136",
+						"231"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"v1",
+						"Spare_Part_Inventory_Health_Chart"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bac05589-555f-4322-85f8-90484b9384e0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "32f667b8-bfd4-4472-bde2-12d86223a442",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"var contentTypeHeaderExists = responseHeaders.hasOwnProperty(\"Content-Type\");",
+					" ",
+					"tests[\"Has Content-Type\"] = contentTypeHeaderExists;",
+					" ",
+					"if (contentTypeHeaderExists) {",
+					"    tests[\"Content-Type is application/json\"] = ",
+					"      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+					"}",
+					" "
+				]
+			}
+		}
+	]
+}
